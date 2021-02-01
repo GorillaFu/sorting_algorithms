@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include "sort.h"
 
+/**
+ * bubble_sort - sorts an array of ints from least to greatest
+ * using bubble sort algorithm. prints array each time elements
+ * are swapped.
+ *
+ * @array: The array to be printed
+ * @size: Number of elements in @array
+ */
 void bubble_sort(int *array, size_t size)
 {
 	unsigned int idx, cidx, temp, flag = 0;
@@ -23,18 +31,5 @@ void bubble_sort(int *array, size_t size)
 		{
 			break;
 		}
-	}
-}
-
-void print_array(int *array, size_t size)
-{
-	unsigned int idx;
-
-	for (idx = 0; idx < size; idx++)
-	{
-		if (idx != size - 1)
-			printf("%d, ", array[idx]);
-		else
-			printf("%d\n", array[idx]);
 	}
 }
