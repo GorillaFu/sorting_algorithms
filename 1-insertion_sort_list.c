@@ -4,7 +4,7 @@
  * insertion_sort_list - Sorts a doubly linked list using an
  * insertion sort algorithm.
  *
- * @list: Is the list to be sorted.
+ * @list: Is the list to sort
  */
 
 void insertion_sort_list(listint_t **list)
