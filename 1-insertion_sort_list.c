@@ -1,29 +1,34 @@
 #include "sort.h"
 
+/**
+ * insertion_sort_list - Sorts a doubly linked list using an
+ * insertion sort algorithm.
+ *
+ * @list: Is the list to be sorted.
+ */
+
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *node, *temp_n, *traverse, *temp_p;
+	listint_t *node, *temp;
 
-	while (*list != NULL || (*list)->next != NULL)
+	node = (*list)->next;
+	while (node)
 	{
-		node = *list;
-		traverse = node;
-		if (traverse->next != NULL)
-			temp_n = node->next;
-		while (node->n < node->prev->n)
+		while (node->prev != NULL && node->prev->n > node->n)
 		{
-			temp_p = node->prev;
-			node = node->prev;
-			node->next = temp_p;
-			node->prev = temp_p->prev;
-			temp_p->prev = node;
-			if (traverse->next != NULL)
-				temp_p->next = temp_n;
-			else
-				temp_p->next = NULL;
+			temp = node->prev;
+			node->prev = temp->prev;
+			if (node->next != NULL)
+				node->next->prev = temp;
+			temp->next = node->next;
+			node->next = temp;
+			if (temp->prev != NULL)
+				temp->prev->next = node;
+			temp->prev = node;
+			if (!node->prev)
+				*list = node;
 			print_list(*list);
 		}
-		if (traverse->next != NULL)
-			node = traverse->next;
+		node = node->next;
 	}
 }
