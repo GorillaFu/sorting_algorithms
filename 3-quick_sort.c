@@ -50,6 +50,7 @@ int lomuto(int arr[], size_t size, int first, int last)
 /**
  * qsRecurse - partitions array, then partitions those partitions recursively
  * @arr: array to be partitioned
+ * @size: size of array
  * @first: index of first element of array
  * @last: index of last element of array
  *
