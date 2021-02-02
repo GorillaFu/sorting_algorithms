@@ -65,6 +65,13 @@ void qsRecurse(int arr[], size_t size, int first, int last)
 	}
 }
 
+/**
+ * quick_sort - uses quicksort alg to sort array from least to greatest
+ * @array: array to be sorted
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void quick_sort(int *array, size_t size)
 {
 	size_t start = 0;
