@@ -36,12 +36,14 @@ int lomuto(int arr[], size_t size, int first, int last)
 		{
 			j++;
 			swap_elements(&arr[j], &arr[i]);
-			print_array(arr, size);
+			if (j != i)
+				print_array(arr, size);
 		}
 	}
 	j++;
 	swap_elements(&arr[j], &arr[last]);
-	print_array(arr, size);
+	if (j != i)
+		print_array(arr, size);
 	return (j);
 }
 
