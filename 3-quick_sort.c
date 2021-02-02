@@ -10,9 +10,9 @@
  */
 void swap_elements(int *a, int *b)
 {
-        int temp = *a;
-        *a = *b;
-        *b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 /**
@@ -42,7 +42,7 @@ int lomuto(int arr[], size_t size, int first, int last)
 	}
 	j++;
 	swap_elements(&arr[j], &arr[last]);
-	if(j != i)
+	if (j != i)
 		print_array(arr, size);
 	return (j);
 }
@@ -60,6 +60,7 @@ void qsRecurse(int arr[], size_t size, int first, int last)
 	if (first < last)
 	{
 		int pivot = lomuto(arr, size, first, last);
+
 		qsRecurse(arr, size, first, pivot - 1);
 		qsRecurse(arr, size, pivot + 1, last);
 	}
